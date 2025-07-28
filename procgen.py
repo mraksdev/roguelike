@@ -5,6 +5,7 @@ from typing import Tuple, Iterator, List, TYPE_CHECKING
 
 import tcod
 
+import entity_factories
 from game_map import GameMap
 import tile_types
 
@@ -46,11 +47,10 @@ def place_entities(room: RectangularRoom, dungeon: GameMap, max_monsters_per_roo
         y = random.randint(room.y1 + 1, room.y2 - 1)
 
         if not any(entity.x == x and entity.y == y for entity in dungeon.entities):
-            # TODO: place different types of entities
             if random.random() < 0.8:
-                pass
+                entity_factories.orc.spawn(dungeon, x, y)
             else:
-                pass
+                entity_factories.troll.spawn(dungeon, x, y)
 
 def tunnel_between(start: Tuple[int, int], end: Tuple[int, int]) -> Iterator[Tuple[int, int]]:
     x1, y1 = start
