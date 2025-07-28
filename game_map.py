@@ -28,3 +28,6 @@ class GameMap:
             default=tile_types.SHROUD,
         )
     
+        for entity in self.entities:
+            if self.visible[entity.x, entity.y]:
+                console.print(x=entity.x, y=entity.y, text=entity.char, fg=entity.color) 

@@ -21,11 +21,10 @@ def main() -> None:
     event_handler = EventHandler()
 
     player = Entity(x=screen_width // 2, y=screen_height // 2, char="@", color=(255, 255, 255))
-    entities = {player}
 
     game_map = generate_dungeon(max_rooms, room_min_size, room_max_size, map_width, map_height, player) 
 
-    engine = Engine(entities=entities, event_handler=event_handler, game_map=game_map, player=player)
+    engine = Engine(event_handler=event_handler, game_map=game_map, player=player)
 
     with tcod.context.new(
         columns=screen_width, 
