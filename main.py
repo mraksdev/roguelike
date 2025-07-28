@@ -10,7 +10,7 @@ def main() -> None:
     screen_height = 50
 
     map_width = 80
-    map_height = 45
+    map_height = 50
 
     room_max_size = 10
     room_min_size = 6
