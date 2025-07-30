@@ -40,7 +40,7 @@ class Entity:
         gamemap.entities.add(clone)
         return clone
     
-    def place(slef, x: int, y: int, gamemap: Optional[GameMap] = None) -> None:
+    def place(self, x: int, y: int, gamemap: Optional[GameMap] = None) -> None:
         self.x = x
         self.y = y
         if gamemap:
