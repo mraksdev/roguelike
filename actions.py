@@ -20,6 +20,10 @@ class Action:
     def perform(self) -> None:
         raise NotImplementedError()
 
+class WaitAction(Action):
+    def perform(self) -> None:
+        pass
+
 class EscapeAction(Action):
     def perform(self) -> None:
         raise SystemExit()
