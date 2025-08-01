@@ -41,10 +41,7 @@ class Fighter(BaseComponent):
         self.entity.blocks_movement = False
         self.entity.ai = None
         self.entity.name = f"remains of {self.entity.name}"
-<<<<<<< HEAD
         self.entity.render_order = RenderOrder.CORPSE
-=======
->>>>>>> d0d7014e5fa18b20ca6ddc768ffa07a936e05727
 
         print(death_message)
     
