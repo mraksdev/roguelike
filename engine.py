@@ -7,6 +7,7 @@ from tcod.console import Console
 from tcod.map import compute_fov
 
 from input_handlers import MainGameEventHandler
+from render_functions import render_bar
 
 if TYPE_CHECKING:
     from entity import Actor
@@ -36,12 +37,11 @@ class Engine:
         console.clear()
         self.game_map.render(console)
 
-        console.print(
-            x=1, 
-            y=47, 
-            text=f"HP: {self.player.fighter.hp}/{self.player.fighter.max_hp}", 
-            fg=(255, 255, 255),
-            bg=(0, 0, 0)
+        render_bar(
+            console=console,
+            current_value=self.player.fighter.hp,
+            maximum_value=self.player.fighter.max_hp,
+            total_width=20,
         )
 
         context.present(console)
